@@ -1,6 +1,6 @@
 {
-  "name": "jira-mcp",
-  "version": "2.0.0",
+  "name": "@ahmetbarut/jira-mcp-server",
+  "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
