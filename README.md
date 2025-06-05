@@ -33,7 +33,7 @@ JIRA_API_TOKEN=your-jira-api-token
 You can run the Jira MCP Server instantly with npx, no global install required:
 
 ```bash
-npx -y jira-mcp-server
+npx -y @ahmetbarut/jira-mcp-server
 ```
 
 Or, if you want to use it as an MCP tool in a config file (e.g. `mcp.json`):
@@ -42,7 +42,7 @@ Or, if you want to use it as an MCP tool in a config file (e.g. `mcp.json`):
 {
   "Jira MCP Server": {
     "command": "npx",
-    "args": ["-y", "jira-mcp-server"],
+    "args": ["-y", "@ahmetbarut/jira-mcp-server"],
     "env": {
       "JIRA_BASE_URL": "https://your-domain.atlassian.net",
       "JIRA_EMAIL": "your-email@company.com",
@@ -60,24 +60,26 @@ Or, if you want to use it as an MCP tool in a config file (e.g. `mcp.json`):
 
 ## 📦 Installation & Setup
 
-1. **Clone the repository:**
+1. **Clone the repository (optional):**
    ```bash
    git clone https://github.com/your-org/jira-mcp-server.git
    cd jira-mcp-server
    ```
-2. **Install dependencies:**
+2. **Install globally (optional):**
    ```bash
-   npm install
+   npm install -g @ahmetbarut/jira-mcp-server
    ```
 3. **Set environment variables:**
    - See above for required variables.
-4. **Build the project:**
+4. **Build the project (if using from source):**
    ```bash
    npm run build
    ```
 5. **Run the server:**
    ```bash
-   npm start
+   jira-mcp-server
+   # or
+   npx -y @ahmetbarut/jira-mcp-server
    ```
 
 ## 🧩 Usage
@@ -86,17 +88,17 @@ This server is designed to be used as an MCP tool server, typically via stdio. Y
 
 ### Example: List Boards
 ```bash
-npx @modelcontextprotocol/inspector --cli node dist/index.js --method tools/call --tool-name get_boards
+npx @modelcontextprotocol/inspector --cli npx -y @ahmetbarut/jira-mcp-server --method tools/call --tool-name get_boards
 ```
 
 ### Example: Get Your Issues for a Board
 ```bash
-npx @modelcontextprotocol/inspector --cli node dist/index.js --method tools/call --tool-name get_issues --tool-arg boardId=123
+npx @modelcontextprotocol/inspector --cli npx -y @ahmetbarut/jira-mcp-server --method tools/call --tool-name get_issues --tool-arg boardId=123
 ```
 
 ### Example: Add a Comment to an Issue
 ```bash
-npx @modelcontextprotocol/inspector --cli node dist/index.js --method tools/call --tool-name add_comment_to_issue --tool-arg issueIdOrKey=PROJ-123 --tool-arg body="This is a test comment."
+npx @modelcontextprotocol/inspector --cli npx -y @ahmetbarut/jira-mcp-server --method tools/call --tool-name add_comment_to_issue --tool-arg issueIdOrKey=PROJ-123 --tool-arg body="This is a test comment."
 ```
 
 ## 🧰 Available Tools
