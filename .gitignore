@@ -1,6 +1,49 @@
-.env*
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Test coverage
+coverage/
+*.lcov
+
+# IDE/Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
 .DS_Store
-.idea
-dist
-node_modules
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime
+*.pid
+*.seed
+*.pid.lock
+
+.env*
 .cursor/
+
+# GitHub Actions artifacts
+.github/artifacts/
+
+# Jest coverage reports
+coverage.json
+
+# Temporary files
+*.tmp
+*.temp
