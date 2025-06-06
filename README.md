@@ -62,7 +62,7 @@ Or, if you want to use it as an MCP tool in a config file (e.g. `mcp.json`):
 
 1. **Clone the repository (optional):**
    ```bash
-   git clone https://github.com/your-org/jira-mcp-server.git
+   git clone https://github.com/ahmetbarut/jira-mcp.git
    cd jira-mcp-server
    ```
 2. **Install globally (optional):**
