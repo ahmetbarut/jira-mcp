@@ -121,6 +121,88 @@ export const mockComment = {
   created: '2023-01-01T12:00:00.000Z'
 };
 
+export const mockIssueDetail = {
+  key: 'TEST-123',
+  id: '12345',
+  fields: {
+    summary: 'Detailed test issue',
+    description: 'This is a detailed description of the test issue',
+    status: {
+      name: 'In Progress',
+      statusCategory: {
+        name: 'In Progress'
+      }
+    },
+    issuetype: {
+      name: 'Story',
+      iconUrl: 'https://test.atlassian.net/icons/story.png'
+    },
+    priority: {
+      name: 'High',
+      iconUrl: 'https://test.atlassian.net/icons/high.png'
+    },
+    assignee: {
+      displayName: 'John Doe',
+      emailAddress: 'john@example.com',
+      accountId: 'john-account-id'
+    },
+    reporter: {
+      displayName: 'Jane Smith',
+      emailAddress: 'jane@example.com',
+      accountId: 'jane-account-id'
+    },
+    project: {
+      key: 'TEST',
+      name: 'Test Project',
+      projectTypeKey: 'software'
+    },
+    labels: ['frontend', 'urgent'],
+    components: [
+      { name: 'UI' },
+      { name: 'Backend' }
+    ],
+    fixVersions: [
+      { name: '1.0.0' }
+    ],
+    versions: [
+      { name: '0.9.0' }
+    ],
+    created: '2023-01-01T10:00:00.000Z',
+    updated: '2023-01-02T15:30:00.000Z',
+    duedate: '2023-01-15',
+    timeoriginalestimate: 28800,
+    timeestimate: 14400,
+    timespent: 14400,
+    resolution: {
+      name: 'Fixed',
+      description: 'A fix for this issue is checked into the tree and tested.'
+    },
+    environment: 'Production environment',
+    parent: {
+      key: 'TEST-100',
+      fields: {
+        summary: 'Parent epic issue'
+      }
+    },
+    subtasks: [
+      {
+        key: 'TEST-124',
+        fields: {
+          summary: 'Subtask 1',
+          status: { name: 'Done' }
+        }
+      },
+      {
+        key: 'TEST-125',
+        fields: {
+          summary: 'Subtask 2',
+          status: { name: 'In Progress' }
+        }
+      }
+    ]
+  }
+};
+
 // Mock fetch response helper
 export function mockFetchResponse(data: any, status = 200) {
   return Promise.resolve({

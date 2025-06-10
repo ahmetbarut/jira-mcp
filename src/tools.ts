@@ -70,4 +70,18 @@ export const toolDefinitions = [
       required: ['issueIdOrKey', 'body'],
     },
   },
+  {
+    name: 'get_issue_detail',
+    description: 'Get detailed information about a specific Jira issue',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        issueIdOrKey: {
+          type: 'string',
+          description: 'The issue key (e.g., PROJ-123) or ID to get details for',
+        },
+      },
+      required: ['issueIdOrKey'],
+    },
+  },
 ]; 
