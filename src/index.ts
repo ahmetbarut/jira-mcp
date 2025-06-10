@@ -16,7 +16,8 @@ import {
   handleGetCurrentUserInfo, 
   handleSearchUser, 
   handleGetServerInfo,
-  handleAddCommentToIssue
+  handleAddCommentToIssue,
+  handleGetIssueDetail
 } from './handlers.js';
 
 const server = new Server(
@@ -71,6 +72,11 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       case 'add_comment_to_issue': {
         const { issueIdOrKey, body } = args as { issueIdOrKey: string, body: string };
         return await handleAddCommentToIssue(config, issueIdOrKey, body);
+      }
+
+      case 'get_issue_detail': {
+        const { issueIdOrKey } = args as { issueIdOrKey: string };
+        return await handleGetIssueDetail(config, issueIdOrKey);
       }
 
       default:

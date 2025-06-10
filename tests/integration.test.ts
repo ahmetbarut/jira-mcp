@@ -13,6 +13,7 @@ describe('Integration Tests', () => {
       expect(toolNames).toContain('search_user');
       expect(toolNames).toContain('get_server_info');
       expect(toolNames).toContain('add_comment_to_issue');
+      expect(toolNames).toContain('get_issue_detail');
     });
 
     test('should have valid schema for get_boards', () => {
@@ -48,6 +49,15 @@ describe('Integration Tests', () => {
       expect(addCommentTool?.inputSchema.properties).toHaveProperty('issueIdOrKey');
       expect(addCommentTool?.inputSchema.properties).toHaveProperty('body');
       expect(addCommentTool?.inputSchema.required).toEqual(['issueIdOrKey', 'body']);
+    });
+
+    test('should have valid schema for get_issue_detail', () => {
+      const getIssueDetailTool = toolDefinitions.find(tool => tool.name === 'get_issue_detail');
+      
+      expect(getIssueDetailTool).toBeDefined();
+      expect(getIssueDetailTool?.description).toContain('detailed information');
+      expect(getIssueDetailTool?.inputSchema.properties).toHaveProperty('issueIdOrKey');
+      expect(getIssueDetailTool?.inputSchema.required).toContain('issueIdOrKey');
     });
   });
 
