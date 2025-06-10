@@ -1,4 +1,4 @@
-import { JiraConfig, Board, Issue } from './types.js';
+import { JiraConfig } from './types.js';
 import { jiraApiCall } from './jiraApi.js';
 
 export async function handleGetBoards(config: JiraConfig) {
